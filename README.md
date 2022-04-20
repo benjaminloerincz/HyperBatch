@@ -1,4 +1,5 @@
 # HyperBatch
+
 A Hyper-Fast Batch Interface for Salesforce
 
 # Why HyperBatch?
@@ -9,11 +10,11 @@ Simply put: speed! The traditional batchable interface in Apex can be too slow f
 
 Consider a scenario where we have 121.000 account records on the platform. We want to create 3 contacts for each account with a random "probability" field for each. 363.000 contacts in total. Then we update the highest and lowest probability on the account by querying the contacts. Get the overall highest and lowest probability across all accounts. Finally, we delete all of the contacts in the platform, and keep a running total of how many get deleted.
 
-|Apex Job|Batchable|HyperBatch|Difference (minutes)|Percentage|
-|---|---|---|---|---|
-|CreateContactsBatch|45 minutes|2 minutes and 12 seconds|42.8|4.9%|
-|UpdateContactsBatch|10 minutes|38 seconds|9.4|6.3%|
-|DeleteContactsBatch|33 minutes (considering row lock errors)|1 minute and 11 seconds|28|3.6%|
+| Apex Job            | Batchable                                | HyperBatch               | Difference (minutes) | Percentage |
+| ------------------- | ---------------------------------------- | ------------------------ | -------------------- | ---------- |
+| CreateContactsBatch | 45 minutes                               | 2 minutes and 12 seconds | 42.8                 | 4.9%       |
+| UpdateContactsBatch | 10 minutes                               | 38 seconds               | 9.4                  | 6.3%       |
+| DeleteContactsBatch | 33 minutes (considering row lock errors) | 1 minute and 11 seconds  | 28                   | 3.6%       |
 
 Running all three sample batch jobs with HyperBatch takes only 4 minutes instead of 88 minutes! That means it only takes 4.6% of the time!
 
